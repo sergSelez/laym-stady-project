@@ -14,6 +14,8 @@ let config = {
   'addStyleBefore': [
     'src/scss/variables.scss',
     'src/scss/mixins.scss',
+    'src/scss/reboot.scss',
+    'swiper/swiper-bundle.css'
     // 'somePackage/dist/somePackage.css', // для 'node_modules/somePackage/dist/somePackage.css',
   ],
   'addStyleAfter': [
@@ -21,6 +23,7 @@ let config = {
   ],
   'addJsBefore': [
     // 'somePackage/dist/somePackage.js', // для 'node_modules/somePackage/dist/somePackage.js',
+    'swiper/swiper-bundle.js'
   ],
   'addJsAfter': [
     './script.js',

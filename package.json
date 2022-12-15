@@ -23,10 +23,10 @@
     "last 2 versions"
   ],
   "lint-staged": {
-    "*.{js,pug,md}": "editorconfig-cli",
-    "*.pug": "pug-lint",
-    "*.scss": "stylelint --syntax=scss",
-    "*.js": "eslint"
+    // "*.{js,pug,md}": "editorconfig-cli",
+    // "*.pug": "pug-lint",
+    // "*.scss": "stylelint --syntax=scss",
+    // "*.js": "eslint"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
@@ -83,7 +83,8 @@
     "baron": "^3.0.3",
     "choices.js": "^9.0.1",
     "closest": "0.0.1",
-    "svg4everybody": "^2.1.8"
+    "svg4everybody": "^2.1.8",
+    "swiper": "^8.4.5"
   },
   "husky": {
     "hooks": {

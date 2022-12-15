@@ -1,0 +1,134 @@
+.header {
+  position: fixed;
+  top: 0;
+  background-color: $color-white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  z-index: 10;
+
+  @media screen and (min-width: $screen-xl) {
+    flex-direction: column;
+  }
+
+  &__head {
+    display: none;
+
+    @media screen and (min-width: $screen-xl) {
+      @include size(100%, rem(43px));
+      background-color: $color-brown;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: rem(14px) rem(25px) rem(14px) rem(194px);
+    }
+  }
+
+  &__links {
+    display: flex;
+    gap: rem(40px);
+  }
+
+  &__link {
+    @include text-main(500);
+    color: $color-white;
+
+    &:last-child {
+      color: $color-green;
+    }
+  }
+
+  &__info {
+    display: flex;
+    gap: rem(42px);
+  }
+
+  &__info-item {
+    @include text-large(700);
+    color: $color-white;
+    padding-left: rem(28px);
+    position: relative;
+
+    &::before {
+      @include size(rem(14px), rem(14px));
+      background-size: contain;
+      background-position-y: 50%;
+      background-repeat: no-repeat;
+      content: '';
+      position: absolute;
+      left: 0;
+    }
+
+    &--phone::before {
+      background-image: url('../img/phone.svg');
+    }
+
+    &--mark::before {
+      background-image: url('../img/mark.svg');
+    }
+
+    &--clock {
+      padding-right: rem(24px);
+
+      &::before {
+        background-image: url('../img/clock.svg');
+      }
+
+      &::after {
+        @include size(rem(10px), rem(14px));
+        background-image: url('../img/arrow-down.svg');
+        background-size: contain;
+        background-position-y: 50%;
+        background-repeat: no-repeat;
+        content: '';
+        position: absolute;
+        right: 0;
+      }
+    }
+  }
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 rem(9px) 0 rem(13px);
+    height: rem(60px);
+  }
+
+  &__wrapper {
+    display: flex;
+    gap: rem(16px);
+  }
+
+  &__burger {
+    cursor: pointer;
+  }
+
+  &__persent {
+    @include flex-center;
+    @include size(rem(31px), rem(31px));
+    @include font(20px, 24px, 700);
+    border-radius: 5px;
+    background-color: $color-yellow;
+  }
+
+  &__logo {
+    @include flex-center;
+    @include size(rem(135px), rem(135px));
+    background-color: $color-white;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    left: 50%;
+    bottom: rem(-18px);
+    transform: translateX(-50%);
+    padding-top: rem(34px);
+
+    @media screen and (min-width: $screen-xl) {
+      @include size(rem(193px), rem(193px));
+      left: rem(-46px);
+      bottom: 0;
+      transform: none;
+      padding: rem(78px) 0 0 rem(30px);
+    }
+  }
+}

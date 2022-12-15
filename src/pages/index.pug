@@ -1,23 +1,17 @@
 extends ../pug/layout.pug
 
-block meta
-  title Главная
-  meta(name='description', content='')
-
+block main
+  +header
+  .wrapper
+    .wrapper__content
+      +dignity
+      +news
+      +products('Акционные товары', 'yellow', 'promotional__swipper')
+      +reviews
+      +products('Новинки', 'mint', 'news__swipper')
+      +products('Выбор вегана', 'green', 'vegan__swipper')
+      +products('Популярные товары', 'orange', 'popular__swipper')
+      +feedback
+      +menu
 //- block append head
 //-   link(rel='stylesheet', href='css/some.css')
-
-block nav
-  +main-nav('10')
-
-block content
-  h1 Заголовок
-  p Содержимое. #[a(href='blocks-demo.html') Библиотека блоков].
-
-  p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium illo earum ipsa dicta? Harum architecto incidunt earum beatae eius rem nulla ab blanditiis placeat voluptas. Hic velit praesentium odit eius!
-
-//- block footer
-//-   p footer
-
-//- block append page-bottom
-//-   script(src='js/some.js')

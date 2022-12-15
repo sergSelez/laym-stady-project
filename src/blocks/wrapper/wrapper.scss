@@ -1,0 +1,17 @@
+.wrapper {
+  max-width: rem(1646px);
+  margin: 0 auto;
+  padding: rem(88px) rem(8px) 0;
+  width: 100%;
+
+  @media screen and (min-width: $screen-md) {
+    padding: rem(100px) rem(35px) 0;
+  }
+
+  &__content {
+    @media screen and (min-width: $screen-md) {
+      max-width: rem(1027px);
+      width: 100%;
+    }
+  }
+}

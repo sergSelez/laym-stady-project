@@ -1,0 +1,95 @@
+mixin products(title, lineColor, swiperName)
+  -
+    const products = [
+      {
+        img: 'img-1',
+        name: 'Макаронные изделия Макфа Триколлини свитки',
+        price: 120,
+        oldPrice: 140
+      },
+      {
+        img: 'img-2',
+        name: 'Макаронные изделия Макфа Триколлини свитки',
+        price: 120,
+        oldPrice: 140
+      },
+      {
+        img: 'img-1',
+        name: 'Макаронные изделия Макфа Триколлини свитки',
+        price: 120,
+        oldPrice: 140
+      },
+      {
+        img: 'img-2',
+        name: 'Макаронные изделия Макфа Триколлини свитки',
+        price: 120,
+        oldPrice: 140
+      },
+      {
+        img: 'img-1',
+        name: 'Макаронные изделия Макфа Триколлини свитки',
+        price: 120,
+        oldPrice: 140
+      },
+      {
+        img: 'img-2',
+        name: 'Макаронные изделия Макфа Триколлини свитки',
+        price: 120,
+        oldPrice: 140
+      },
+      {
+        img: 'img-1',
+        name: 'Макаронные изделия Макфа Триколлини свитки',
+        price: 120,
+        oldPrice: 140
+      },
+      {
+        img: 'img-2',
+        name: 'Макаронные изделия Макфа Триколлини свитки',
+        price: 120,
+        oldPrice: 140
+      },
+      {
+        img: 'img-1',
+        name: 'Макаронные изделия Макфа Триколлини свитки',
+        price: 120,
+        oldPrice: 140
+      },
+      {
+        img: 'img-2',
+        name: 'Макаронные изделия Макфа Триколлини свитки',
+        price: 120,
+        oldPrice: 140
+      },
+      {
+        img: 'img-1',
+        name: 'Макаронные изделия Макфа Триколлини свитки',
+        price: 120,
+        oldPrice: 140
+      }
+    ]
+  .products
+    .products__prev
+    .products__next
+    .products__head
+      .products__title(class=lineColor)!=title
+      a(href="#").products__all-button Все
+    .swiper.products__swiper(class=swiperName)
+      .swiper-wrapper.products__wrapper
+        each item in products
+          .swiper-slide.products__item
+            .products__img-wrapper
+              img(src="img/favorite.svg", alt="Избранное").products__favorite
+              img(src=`img/${item.img}.png`, alt=item.name).products__img
+              .products__discount -26%
+            .products__rating
+              img(src="img/stars.svg", alt="").products__stars
+              span.products__counter 3 254
+            .products__name!=item.name
+            .products__info
+              span.products__price.products__price--new!=`${item.price} руб.`
+              span.products__old-price!=`${item.oldPrice} руб.`
+            button.products__button
+              img(src="img/plus.svg", alt="").products__plus
+              span В корзину
+      .swiper-scrollbar.products__scrollbar

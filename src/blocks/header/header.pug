@@ -1,0 +1,49 @@
+mixin header
+  -
+    const links = [
+      {
+        name: 'Шеф-лайм',
+        link: '#',
+      },
+      {
+        name: 'Вакансии',
+        link: '#',
+      },
+      {
+        name: 'Вопрос-ответ',
+        link: '#',
+      },
+      {
+        name: 'Бонусная программа',
+        link: '#',
+      }
+    ]
+
+  header.header
+    .header__head
+      .header__info
+        span.header__info-item.header__info-item--phone 7756
+        span.header__info-item.header__info-item--mark Зона доставки
+        span.header__info-item.header__info-item--clock 17:00 - 17:45
+      nav.header__links
+        each item in links
+          a(href=item.link).header__link!=item.name
+    .header__body
+      .header__logo
+        img(src="img/logo.svg", alt="")
+      button.header__menu
+        img(src="img/button-menu.svg", alt="menu")
+        span
+      .header__wrapper
+        img(src="img/menu.svg", alt="Меню").header__burger
+        .header__persent %
+      .header__wrapper
+        a(href="#").header__section
+          img(src="img/profile.svg", alt="Профиль")
+          span.
+        a(href="#").header__section
+          img(src="img/favorite.svg", alt="Избранное")
+        a(href="#").header__section
+          img(src="img/basket.svg", alt="Корзина")
+        
+        
