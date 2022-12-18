@@ -2,17 +2,31 @@ import ready from '../../js/utils/documentReady'
 
 ready(function() {
   const burger = document.querySelector('.header__burger')
+  const descMenu = document.querySelector('.header__menu')
   const menu = document.querySelector('.menu')
   const menuList = document.querySelectorAll('.menu__item')
   const subMenuList = document.querySelectorAll('.menu__submenu-wrapper')
   const substrate = document.querySelector('.menu__dark-wrapper')
-  
-  burger.addEventListener('click', () => {
+
+  const addActive = (item) => {
+    item.classList.add('active')
+  }
+
+  const removeActive = (item) => {
+    item.classList.remove('active')
+  }
+
+  const showCloseMenu = () => {
+    if (menu.classList.contains('active')) {
+      menuList.forEach(item => item.classList.remove('active'))
+      subMenuList.forEach(item => item.classList.remove('active'))
+    }
+
     menu.classList.toggle('active')
     substrate.classList.toggle('active')
-  })
+  }
 
-  menu.addEventListener('click', (e) => {
+  const showCloseSubmenu = (e) => {
     if (e.target.closest('.menu__item')) {
       const currentItem = e.target.closest('.menu__item')
       const nextItem = currentItem.nextElementSibling
@@ -28,13 +42,10 @@ ready(function() {
       addActive(currentItem)
       addActive(nextItem)
     }
-  })
-
-  const addActive = (item) => {
-    item.classList.add('active')
   }
 
-  const removeActive = (item) => {
-    item.classList.remove('active')
-  }
+  burger.addEventListener('click', showCloseMenu)
+  descMenu.addEventListener('click', showCloseMenu)
+  substrate.addEventListener('click', showCloseMenu)
+  menu.addEventListener('click', (e) => showCloseSubmenu(e))
 })

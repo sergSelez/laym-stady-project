@@ -2,87 +2,32 @@ import ready from '../../js/utils/documentReady'
 import Swiper, { Navigation, Scrollbar } from 'swiper';
 
 ready(function() {
-  const promotionalSwiper = new Swiper('.promotional__swipper', {
-    loop: false,
-    slidesPerView: 'auto',
-    spaceBetween: 16,
-    modules: [Scrollbar, Navigation],
-    scrollbar: {
-      el: '.swiper-scrollbar',
-    },
-    breakpoints: {
-      1200: {
-        slidesPerView: 6,
-        spaceBetween: 10,
-        scrollbar: false,
-        navigation: {
-          nextEl: '.products__next',
-          prevEl: '.products__prev',
-        },
+  const swiperInit = (swiperName, swiperClass, arrowNext, arrowPrev) => {
+    let name = swiperName
+    name = new Swiper(swiperClass, {
+      loop: false,
+      slidesPerView: 'auto',
+      spaceBetween: 16,
+      modules: [Scrollbar, Navigation],
+      scrollbar: {
+        el: '.swiper-scrollbar',
+      },
+      breakpoints: {
+        1200: {
+          slidesPerView: 6,
+          spaceBetween: 10,
+          scrollbar: false,
+          navigation: {
+            nextEl: arrowNext,
+            prevEl: arrowPrev,
+          },
+        }
       }
-    }
-  });
-
-  const newsSwiper = new Swiper('.news__swipper', {
-    loop: false,
-    slidesPerView: 'auto',
-    spaceBetween: 16,
-    modules: [Scrollbar, Navigation],
-    scrollbar: {
-      el: '.swiper-scrollbar',
-    },
-    breakpoints: {
-      1200: {
-        slidesPerView: 6,
-        spaceBetween: 10,
-        scrollbar: false,
-        navigation: {
-          nextEl: '.products__next',
-          prevEl: '.products__prev',
-        },
-      }
-    }
-  });
-
-  const veganSwiper = new Swiper('.vegan__swipper', {
-    loop: false,
-    slidesPerView: 'auto',
-    spaceBetween: 16,
-    modules: [Scrollbar, Navigation],
-    scrollbar: {
-      el: '.swiper-scrollbar',
-    },
-    breakpoints: {
-      1200: {
-        slidesPerView: 6,
-        spaceBetween: 10,
-        scrollbar: false,
-        navigation: {
-          nextEl: '.products__next',
-          prevEl: '.products__prev',
-        },
-      }
-    }
-  });
-
-  const popularSwiper = new Swiper('.popular__swipper', {
-    loop: false,
-    slidesPerView: 'auto',
-    spaceBetween: 16,
-    modules: [Scrollbar, Navigation],
-    scrollbar: {
-      el: '.swiper-scrollbar',
-    },
-    breakpoints: {
-      1200: {
-        slidesPerView: 6,
-        spaceBetween: 10,
-        scrollbar: false,
-        navigation: {
-          nextEl: '.products__next',
-          prevEl: '.products__prev',
-        },
-      }
-    }
-  });
+    });
+  }
+  
+  swiperInit('promotionalSwiper', '.promotional__swipper', '.promotional-next', '.promotional-prev')
+  swiperInit('newsSwiper', '.news__swipper', '.news-next', '.news-prev')
+  swiperInit('veganSwiper', '.vegan__swipper', '.vegan-next', '.vegan-prev')
+  swiperInit('popularSwiper', '.popular__swipper', '.popular-next', '.popular-prev')
 })

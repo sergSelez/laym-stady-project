@@ -4,15 +4,16 @@ import Swiper, { Navigation } from 'swiper';
 ready(function() {
   const showAllButton = document.querySelector('.reviews__show-button')
   const itemsWrapper = document.querySelector('.reviews__wrapper')
-  const mediaQuery = window.matchMedia('(min-width: 1200px)')
+  const mediaQuery = window.matchMedia('(min-width: 1280px)')
 
   const showAllItems = () => {
+    console.log(itemsWrapper.scrollHeight)
     if (itemsWrapper.style.maxHeight) {
       itemsWrapper.style.maxHeight = null
       itemsWrapper.classList.remove('reviews__wrapper--active')
       showAllButton.innerText = 'Смотреть все отзывы'
     } else {
-      itemsWrapper.style.maxHeight = itemsWrapper.scrollHeight
+      itemsWrapper.style.maxHeight = itemsWrapper.scrollHeight + 'px'
       itemsWrapper.classList.add('reviews__wrapper--active')
       showAllButton.innerText = 'Свертнуть отзывы'
     }

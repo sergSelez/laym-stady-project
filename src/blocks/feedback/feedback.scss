@@ -31,9 +31,8 @@
   }
 
   &__wrapper {
+    @include flex-column;
     grid-column: 1 / -1;
-    display: flex;
-    flex-direction: column;
     gap: rem(8px);
 
     @media screen and (min-width: $screen-xl) {

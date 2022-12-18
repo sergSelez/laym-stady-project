@@ -20,6 +20,8 @@ mixin header
     ]
 
   header.header
+    .header__logo
+      img(src="img/logo.svg", alt="")
     .header__head
       .header__info
         span.header__info-item.header__info-item--phone 7756
@@ -27,23 +29,25 @@ mixin header
         span.header__info-item.header__info-item--clock 17:00 - 17:45
       nav.header__links
         each item in links
-          a(href=item.link).header__link!=item.name
+          a.header__link(href=item.link)!=item.name
     .header__body
-      .header__logo
-        img(src="img/logo.svg", alt="")
-      button.header__menu
-        img(src="img/button-menu.svg", alt="menu")
-        span.header__menu-text Каталог
-      .header__wrapper(style="display: none")
-        img(src="img/menu.svg", alt="Меню").header__burger
+      .header__wrapper.header__wrapper--desc
+        button.header__menu
+          img(src="img/button-menu.svg", alt="menu")
+          span Каталог
+        input.header__search(type="text" placeholder="Купить молоко")
+        .header__discounts Скидки
+      .header__wrapper.header__wrapper--mob
+        img.header__burger(src="img/menu.svg", alt="Меню")
         .header__persent %
       .header__wrapper
-        a(href="#").header__section
+        a.header__personal-link(href="#")
           img(src="img/profile.svg", alt="Профиль")
-          span.
-        a(href="#").header__section
+          span Кабинет
+        a.header__personal-link(href="#")
           img(src="img/favorite.svg", alt="Избранное")
-        a(href="#").header__section
+          span Избранное
+        a.header__personal-link(href="#")
           img(src="img/basket.svg", alt="Корзина")
-        
+          span Корзина
         

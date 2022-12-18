@@ -26,6 +26,10 @@
   &__list {
     position: relative;
     padding-top: rem(95px);
+
+    @media screen and (min-width: $screen-xl) {
+      padding-top: rem(136px);
+    }
   }
 
   &__item {
@@ -36,9 +40,15 @@
     padding: 0 rem(30px) 0 rem(16px);
     position: relative;
     border-top: 1px solid $color-gray-white;
+    cursor: pointer;
 
     @media screen and (min-width: $screen-xl) {
       min-height: rem(38px);
+      padding-left: rem(21px);
+    }
+
+    &:hover {
+      background-color: $color-green;
     }
 
     &::after {
@@ -75,7 +85,7 @@
       left: auto;
       transform: translateX(100%);
       min-width: rem(338px);
-      padding: rem(140px) rem(40px) 0;
+      padding: rem(162px) rem(53px) 0;
     }
 
     &.active {
@@ -85,13 +95,19 @@
 
   &__subtitle {
     @include text-large;
+    display: inline-block;
+    min-width: rem(201px);
     margin-bottom: rem(18px);
     padding-bottom: rem(8px);
+    border-bottom: 1px solid $color-gray-border;
+
+    @media screen and (min-width: $screen-xl) {
+      margin-bottom: rem(40px);
+    }
   }
 
   &__link-wrapper {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     gap: rem(18px);
   }
 

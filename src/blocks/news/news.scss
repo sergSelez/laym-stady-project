@@ -34,6 +34,16 @@
     @media screen and (min-width: $screen-md) {
       flex: 1;
     }
+
+    &:hover {
+      .news__name {
+        color: $color-green-dark;
+      }
+
+      .news__more {
+        opacity: 1;
+      }
+    }
   }
 
   &__img-wrapper {
@@ -60,6 +70,7 @@
   &__name {
     @include text-main(700);
     margin-bottom: rem(9px);
+    transition: color 0.3s;
 
     @media screen and (min-width: $screen-xl) {
       @include text-large(700);
@@ -94,5 +105,6 @@
     @include text-main;
     text-decoration: underline;
     opacity: 0.5;
+    transition: opacity 0.3s;
   }
 }

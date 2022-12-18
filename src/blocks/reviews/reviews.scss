@@ -12,9 +12,7 @@
   }
 
   &__head {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex-between-center;
     margin-bottom: rem(20px);
 
     @media screen and (min-width: $screen-xl) {

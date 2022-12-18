@@ -1,0 +1,46 @@
+.main-banner {
+  margin: 0 rem(-8px) rem(35px);
+
+  &__img {
+    width: 100%;
+    object-fit: contain;
+  }
+
+  &__pagination {
+    position: static;
+  }
+
+  &__prev,
+  &__next {
+    @include size(rem(21px), rem(48px));
+    display: block;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-color: $color-white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 2;
+  }
+
+  &__prev {
+    background-image: url('../img/prev-arrow.svg');
+    left: rem(8px);
+  }
+
+  &__next {
+    background-image: url('../img/next-arrow.svg');
+    right: rem(8px);
+  }
+
+  .swiper-pagination-bullet-active {
+    background: $color-text;
+  }
+
+  .swiper-slide {
+    width: 86%;
+  }
+}

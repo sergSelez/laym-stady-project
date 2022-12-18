@@ -1,17 +1,22 @@
 .wrapper {
-  max-width: rem(1646px);
+  max-width: rem(1316px);
   margin: 0 auto;
-  padding: rem(88px) rem(8px) 0;
+  padding: 0 rem(8px);
   width: 100%;
 
-  @media screen and (min-width: $screen-md) {
-    padding: rem(100px) rem(35px) 0;
+  @media screen and (min-width: $screen-xl) {
+    display: flex;
+    position: relative;
+    padding: 0 rem(35px);
   }
 
   &__content {
-    @media screen and (min-width: $screen-md) {
+    padding: rem(88px) 0;
+
+    @media screen and (min-width: $screen-xl) {
       max-width: rem(1027px);
       width: 100%;
+      padding: rem(128px) rem(20px) 0 0;
     }
   }
 }
