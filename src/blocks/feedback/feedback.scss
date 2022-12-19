@@ -44,10 +44,10 @@
 
   &__button {
     @include flex-center;
+    @include shadow;
     @include text-main(700);
     @include size(100%, rem(48px));
     background-color: $color-white;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     cursor: pointer;
     transition: box-shadow 0.2s;

@@ -1,8 +1,8 @@
 .header {
+  @include small-shadow;
   position: fixed;
   top: 0;
   background-color: $color-white;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   width: 100%;
   z-index: 10;
 
@@ -135,12 +135,12 @@
     background-color: $color-yellow;
   }
 
-  &__logo {
+  &__logo-wrapper {
     @include flex-center;
+    @include small-shadow;
     @include size(rem(135px), rem(135px));
     background-color: $color-white;
     border-radius: 50%;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     position: absolute;
     left: 50%;
     bottom: rem(-18px);
@@ -154,6 +154,10 @@
       transform: none;
       padding: rem(78px) 0 0 rem(30px);
     }
+  }
+
+  &__logo {
+    @include size(rem(107px), rem(71px));
   }
 
   &__menu {

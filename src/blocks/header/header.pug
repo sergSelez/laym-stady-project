@@ -20,8 +20,8 @@ mixin header
     ]
 
   header.header
-    .header__logo
-      img(src="img/logo.svg", alt="")
+    .header__logo-wrapper
+      img.header__logo(src="img/logo.svg", alt="Лайм Фреш Маркет")
     .header__head
       .header__info
         span.header__info-item.header__info-item--phone 7756
@@ -33,7 +33,7 @@ mixin header
     .header__body
       .header__wrapper.header__wrapper--desc
         button.header__menu
-          img(src="img/button-menu.svg", alt="menu")
+          img(src="img/button-menu.svg", alt="menu", width="22", height="16")
           span Каталог
         input.header__search(type="text" placeholder="Купить молоко")
         .header__discounts Скидки
@@ -42,12 +42,12 @@ mixin header
         .header__persent %
       .header__wrapper
         a.header__personal-link(href="#")
-          img(src="img/profile.svg", alt="Профиль")
+          img(src="img/profile.svg", alt="Профиль", width="16", height="20")
           span Кабинет
         a.header__personal-link(href="#")
-          img(src="img/favorite.svg", alt="Избранное")
+          img(src="img/favorite.svg", alt="Избранное", width="20", height="18")
           span Избранное
         a.header__personal-link(href="#")
-          img(src="img/basket.svg", alt="Корзина")
+          img(src="img/basket.svg", alt="Корзина", width="20", height="20")
           span Корзина
         

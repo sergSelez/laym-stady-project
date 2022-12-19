@@ -6,10 +6,6 @@
 	box-sizing: border-box;
 }
 
-:root {
-	// font-size: var(--font_size_root);
-}
-
 html,
 body {
 	height: 100%;
@@ -26,7 +22,6 @@ button {
 
 html {
 	font-family: $font-family;
-	// font-size: var(--font_size_root);
 	line-height: 1;
 	// -webkit-tap-highlight-color: rgba(var(--color_black), 0);
 	-webkit-text-size-adjust: 100%;
@@ -35,11 +30,7 @@ html {
 body {
 	background-color: $color-white;
 	color: $color-text;
-	// font-family: var(--font_base);
-	// font-size: var(--font_size_base);
-	// font-weight: var(--font_weight_base);
 	line-height: 1;
-	margin: 0;
 }
 
 [tabindex='-1']:focus:not(:focus-visible) {

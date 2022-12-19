@@ -2,7 +2,7 @@
   margin-bottom: rem(34px);
 
   @media screen and (min-width: $screen-xl) {
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    @include wide-shadow;
     border-radius: 10px;
     margin: 0 rem(-14px) rem(36px);
     padding-top: rem(8px);
@@ -92,7 +92,7 @@
       transition: box-shadow 0.2s;
 
       &:hover {
-        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+        @include wide-shadow;
         border-radius: 10px;
       }
     }
@@ -119,11 +119,11 @@
 
   &__discount {
     @include size(rem(36px), rem(18px));
+    @include shadow;
     @include flex-center;
     @include text-smaller(700);
     background-color: $color-red;
     border-radius: 5px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
     color: $color-white;
     position: absolute;
     left: 0;
@@ -187,12 +187,12 @@
 
     @media screen and (min-width: $screen-xl) {
       @include size(rem(27px), rem(72px));
+      @include small-shadow;
       display: block;
       background-repeat: no-repeat;
       background-position: 50% 50%;
       background-color: $color-white;
       border-radius: 5px;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
       position: absolute;
       top: 50%;
       transform: translateY(-50%);

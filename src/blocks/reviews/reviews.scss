@@ -1,7 +1,7 @@
 .reviews {
+  @include wide-shadow;
   background-color: $color-gray-bg;
   border-radius: 10px;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
   margin-bottom: rem(28px);
   padding: rem(14px) rem(20px) rem(11px);
 
@@ -40,6 +40,7 @@
     background-color: $color-green;
     border-radius: 10px;
     padding: rem(10px) rem(26px);
+    cursor: pointer;
   }
 
   &__wrapper {
@@ -122,11 +123,11 @@
   .reviews__next {
     @media screen and (min-width: $screen-xl) {
       @include size(rem(27px), rem(72px));
+      @include small-shadow;
       background-repeat: no-repeat;
       background-position: 50% 50%;
       background-color: $color-gray-bg;
       border-radius: 5px;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
       position: absolute;
       top: 50%;
       transform: translateY(-50%);

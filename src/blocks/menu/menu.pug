@@ -83,11 +83,11 @@ mixin menu
       .menu__title Выберите категорию
       each item in menu
         li.menu__item
-          img(src=`img/${item.icon}.svg`, alt=item.name).menu__icon
+          img.menu__icon(src=`img/${item.icon}.svg`, alt=item.name)
           .menu__name!=item.name
         .menu__submenu-wrapper
           .menu__subtitle!=item.name
           .menu__link-wrapper
             each subitem in item.submenu
-              a(href="#").menu__link!=subitem
+              a.menu__link(href="#")!=subitem
   .menu__dark-wrapper

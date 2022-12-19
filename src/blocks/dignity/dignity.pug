@@ -26,6 +26,6 @@ mixin dignity
   section.dignity
     each item in dignity
       .dignity__item
-        img(src=`img/${item.img}.svg`, alt=item.title).dignity__icon
+        img.dignity__icon(src=`img/${item.img}.svg`, alt=item.title)
         span.dignity__title!=item.title
         span.dignity__text!=item.text

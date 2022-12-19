@@ -1,4 +1,4 @@
-mixin products(title, lineColor, swiperName)
+mixin products(title, lineColor, swiperName, arrowClass)
   -
     const products = [
       {
@@ -69,41 +69,28 @@ mixin products(title, lineColor, swiperName)
       }
     ]
   section.products
-    if title == 'Акционные товары'
-      .products__prev.promotional-prev
-      .products__next.promotional-next
-    else if title == 'Новинки'
-      .products__prev.news-prev
-      .products__next.news-next
-    else if title == 'Выбор вегана'
-      .products__prev.vegan-prev
-      .products__next.vegan-next
-    else if title == 'Популярные товары'
-      .products__prev.popular-prev
-      .products__next.popular-next
-    else
-      .products__prev
-      .products__next
+    .products__prev(class=`${arrowClass}-prev`)
+    .products__next(class=`${arrowClass}-next`)
     .products__head
       .products__title(class=lineColor)!=title
-      a(href="#").products__all-button Все
+      a.products__all-button(href="#") Все
     .swiper.products__swiper(class=swiperName)
       .swiper-wrapper.products__wrapper
         each item in products
           .swiper-slide.products__item
             a(href="#") 
               .products__img-wrapper
-                img(src="img/favorite.svg", alt="Избранное").products__favorite
-                img(src=`img/${item.img}.png`, alt=item.name).products__img
+                img.products__favorite(src="img/favorite.svg", alt="Избранное")
+                img.products__img(src=`img/${item.img}.png`, alt=item.name)
                 .products__discount -26%
               .products__rating
-                img(src="img/stars.svg", alt="").products__stars
+                img.products__stars(src="img/stars.svg", alt="Рейтинг")
                 span.products__counter 3 254
               .products__name!=item.name
               .products__info
                 span.products__price.products__price--new!=`${item.price} руб.`
                 span.products__old-price!=`${item.oldPrice} руб.`
               button.products__button
-                img(src="img/plus.svg", alt="").products__plus
+                img.products__plus(src="img/plus.svg", alt="Добавить")
                 span В корзину
       .swiper-scrollbar.products__scrollbar

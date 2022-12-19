@@ -13,7 +13,7 @@ ready(function() {
         el: '.swiper-scrollbar',
       },
       breakpoints: {
-        1200: {
+        1280: {
           slidesPerView: 6,
           spaceBetween: 10,
           scrollbar: false,
