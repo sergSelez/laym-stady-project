@@ -14,7 +14,9 @@ mixin basket
     .basket__wrapper.basket__wrapper--bottom
       .basket__price
         span.basket__text Итого, руб:
-        span.basket__text.basket__text--bold 120,85
+        span.basket__text.basket__text--bold.basket__sum 0
       a.basket__confirm(href="#")
-        img(src="img/basket-coint.svg", alt="Корзина", width="32", height="28")
+        .basket__amount
+          img(src="img/basket-coint.svg", alt="Корзина", width="24", height="24")
+          .basket__amount-value 0
         span Подтвердить заказ

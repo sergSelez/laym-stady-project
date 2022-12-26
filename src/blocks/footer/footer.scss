@@ -8,9 +8,13 @@
   }
 
   &__left {
-    display: flex;
+    @include flex-column;
     gap: rem(72px);
-    margin-right: rem(152px);
+
+    @media screen and (min-width: $screen-xl) {
+      flex-direction: row;
+      margin-right: rem(152px);
+    }
   }
 
   &__logo-wrapper {
@@ -51,13 +55,31 @@
     list-style: none;
   }
 
+  &__menu-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(40px);
+
+    @media screen and (min-width: $screen-xl) {
+      max-width: rem(385px);
+      width: 100%;
+    }
+  }
+
   &__menu {
-    margin-top: rem(62px);
+    @media screen and (min-width: $screen-xl) {
+      margin-top: rem(62px);
+    }
   }
 
   &__menu-link {
     @include text-large(500);
     color: $color-white;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $color-green-dark;
+    }
   }
 
   &__right {

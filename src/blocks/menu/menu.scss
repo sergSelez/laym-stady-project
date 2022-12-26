@@ -113,6 +113,11 @@
 
   &__link {
     @include text-large(600);
+    transition: color 0.3s;
+
+    &:hover {
+      color: $color-green-dark;
+    }
   }
 
   &__dark-wrapper {

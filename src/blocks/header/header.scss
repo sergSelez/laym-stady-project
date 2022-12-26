@@ -30,9 +30,14 @@
   &__link {
     @include text-main(500);
     color: $color-white;
+    transition: color 0.3s;
 
     &:last-child {
       color: $color-green;
+    }
+
+    &:hover {
+      color: $color-green-dark;
     }
   }
 
@@ -171,6 +176,10 @@
       gap: rem(15px);
       padding: rem(14px) rem(18px);
       cursor: pointer;
+
+      &:hover {
+        filter: brightness(1);
+      }
     }
   }
 
@@ -221,9 +230,14 @@
       @include text-large(700);
       gap: rem(10px);
       height: rem(30px);
+      transition: color 0.3s;
 
       & img {
         height: 20px;
+      }
+
+      &:hover {
+        color: $color-green-dark;
       }
     }
   

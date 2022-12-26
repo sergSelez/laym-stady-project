@@ -5,67 +5,78 @@ mixin products(title, lineColor, swiperName, arrowClass)
         img: 'img-1',
         name: 'Макаронные изделия Макфа Триколлини свитки',
         price: 120,
-        oldPrice: 140
+        oldPrice: 140,
+        weight: 450
       },
       {
         img: 'img-2',
         name: 'Макаронные изделия Макфа Триколлини свитки',
         price: 120,
-        oldPrice: 140
+        oldPrice: 140,
+        weight: 450
       },
       {
         img: 'img-1',
         name: 'Макаронные изделия Макфа Триколлини свитки',
         price: 120,
-        oldPrice: 140
+        oldPrice: 140,
+        weight: 450
       },
       {
         img: 'img-2',
         name: 'Макаронные изделия Макфа Триколлини свитки',
         price: 120,
-        oldPrice: 140
+        oldPrice: 140,
+        weight: 450
       },
       {
         img: 'img-1',
         name: 'Макаронные изделия Макфа Триколлини свитки',
         price: 120,
-        oldPrice: 140
+        oldPrice: 140,
+        weight: 450
       },
       {
         img: 'img-2',
         name: 'Макаронные изделия Макфа Триколлини свитки',
         price: 120,
-        oldPrice: 140
+        oldPrice: 140,
+        weight: 450
       },
       {
         img: 'img-1',
         name: 'Макаронные изделия Макфа Триколлини свитки',
         price: 120,
-        oldPrice: 140
+        oldPrice: 140,
+        weight: 450
       },
       {
         img: 'img-2',
         name: 'Макаронные изделия Макфа Триколлини свитки',
         price: 120,
-        oldPrice: 140
+        oldPrice: 140,
+        weight: 450
       },
       {
         img: 'img-1',
         name: 'Макаронные изделия Макфа Триколлини свитки',
         price: 120,
-        oldPrice: 140
+        oldPrice: 140,
+        weight: 450
       },
       {
         img: 'img-2',
         name: 'Макаронные изделия Макфа Триколлини свитки',
         price: 120,
-        oldPrice: 140
+        oldPrice: 140,
+        weight: 450
       },
       {
         img: 'img-1',
         name: 'Макаронные изделия Макфа Триколлини свитки',
         price: 120,
-        oldPrice: 140
+        oldPrice: 140,
+        weight: 450
       }
     ]
   section.products
@@ -78,7 +89,7 @@ mixin products(title, lineColor, swiperName, arrowClass)
       .swiper-wrapper.products__wrapper
         each item in products
           .swiper-slide.products__item
-            a(href="#") 
+            a(href="#", data-name=item.name, data-price=item.price, data-weight=item.weight, data-img=item.img) 
               .products__img-wrapper
                 img.products__favorite(src="img/favorite.svg", alt="Избранное")
                 img.products__img(src=`img/${item.img}.png`, alt=item.name)
@@ -92,5 +103,5 @@ mixin products(title, lineColor, swiperName, arrowClass)
                 span.products__old-price!=`${item.oldPrice} руб.`
               button.products__button
                 img.products__plus(src="img/plus.svg", alt="Добавить")
-                span В корзину
+                | В корзину
       .swiper-scrollbar.products__scrollbar

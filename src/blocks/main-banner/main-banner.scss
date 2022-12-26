@@ -3,6 +3,7 @@
 
   @media screen and (min-width: $screen-xl) {
     margin: 0 0 rem(35px);
+    position: relative;
   }
 
   &__img {
@@ -12,6 +13,12 @@
 
   &__pagination {
     position: static;
+
+    @media screen and (min-width: $screen-xl) {
+      position: absolute;
+      bottom: 0;
+      z-index: 9999;
+    }
   }
 
   &__prev,
@@ -39,7 +46,7 @@
     left: rem(8px);
 
     @media screen and (min-width: $screen-xl) {
-      left: rem(-4px);
+      left: rem(-13.5px);
     }
   }
 
@@ -48,12 +55,22 @@
     right: rem(8px);
 
     @media screen and (min-width: $screen-xl) {
-      right: rem(-4px);
+      right: rem(-13.5px);
     }
   }
+  .swiper-pagination-bullet {
+    background: $color-gray-white;
 
+    @media screen and (min-width: $screen-xl) {
+      background: $color-white;
+    }
+  }i
   .swiper-pagination-bullet-active {
     background: $color-text;
+
+    @media screen and (min-width: $screen-xl) {
+      background: #EC8C8B;
+    }
   }
 
   .swiper {

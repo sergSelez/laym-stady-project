@@ -8,13 +8,17 @@
     display: flex;
     position: relative;
     padding: 0 rem(35px);
+
+    &--main {
+      padding-right: 0;
+    }
   }
 
   &__content {
     padding: rem(88px) 0;
 
     @media screen and (min-width: $screen-xl) {
-      max-width: rem(1027px);
+      max-width: rem(1048px);
       width: 100%;
       padding: rem(128px) rem(20px) 0 0;
     }
