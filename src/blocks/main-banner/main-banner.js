@@ -35,4 +35,20 @@ ready(function() {
       prevEl: '.main-banner__prev',
     },
   });
+
+  const mobBannerSwiper = new Swiper('.main-banner__mob-swiper', {
+    slidesPerView: 'auto',
+    spaceBetween: 10,
+    centeredSlides: true,
+    loop: true,
+    modules: [Pagination, Navigation],
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.main-banner__next',
+      prevEl: '.main-banner__prev',
+    }
+  })
 })

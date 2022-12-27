@@ -32,3 +32,12 @@ mixin main-banner
       .main-banner__prev
       .main-banner__next
     .swiper-pagination.main-banner__pagination
+    .swiper.main-banner__mob-swiper
+      .swiper-wrapper
+        each item in banners
+          .swiper-slide
+            a.main-banner__wrapper(href=item.url) 
+              img.main-banner__img(src=`img/${item.src}.png`, alt=item.name)
+      .main-banner__prev
+      .main-banner__next
+    .swiper-pagination.main-banner__pagination

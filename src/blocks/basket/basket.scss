@@ -41,6 +41,7 @@
     gap: rem(4px);
     padding: rem(8px) rem(6px);
     height: 100%;
+    overflow-y: auto;
   }
 
   &__text {

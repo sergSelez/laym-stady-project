@@ -88,20 +88,19 @@ mixin products(title, lineColor, swiperName, arrowClass)
     .swiper.products__swiper(class=swiperName)
       .swiper-wrapper.products__wrapper
         each item in products
-          .swiper-slide.products__item
-            a(href="#", data-name=item.name, data-price=item.price, data-weight=item.weight, data-img=item.img) 
-              .products__img-wrapper
-                img.products__favorite(src="img/favorite.svg", alt="Избранное")
-                img.products__img(src=`img/${item.img}.png`, alt=item.name)
-                .products__discount -26%
-              .products__rating
-                img.products__stars(src="img/stars.svg", alt="Рейтинг")
-                span.products__counter 3 254
-              .products__name!=item.name
-              .products__info
-                span.products__price.products__price--new!=`${item.price} руб.`
-                span.products__old-price!=`${item.oldPrice} руб.`
-              button.products__button
-                img.products__plus(src="img/plus.svg", alt="Добавить")
-                | В корзину
+          .swiper-slide.products__item(data-name=item.name, data-price=item.price, data-weight=item.weight, data-img=item.img)
+            .products__img-wrapper
+              img.products__favorite(src="img/favorite.svg", alt="Избранное")
+              img.products__img(src=`img/${item.img}.png`, alt=item.name)
+              .products__discount -26%
+            .products__rating
+              img.products__stars(src="img/stars.svg", alt="Рейтинг")
+              span.products__counter 3 254
+            .products__name!=item.name
+            .products__info
+              span.products__price.products__price--new!=`${item.price} руб.`
+              span.products__old-price!=`${item.oldPrice} руб.`
+            button.products__button
+              img.products__plus(src="img/plus.svg", alt="Добавить")
+              | В корзину
       .swiper-scrollbar.products__scrollbar

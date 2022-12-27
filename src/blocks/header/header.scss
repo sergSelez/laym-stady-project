@@ -8,17 +8,44 @@
 
   @media screen and (min-width: $screen-xl) {
     flex-direction: column;
-    border-bottom-left-radius: 50px;
   }
 
   &__head {
     display: none;
 
     @media screen and (min-width: $screen-xl) {
-      @include flex-between-center;
-      @include size(100%, rem(43px));
+      display: block;
       background-color: $color-brown;
-      padding: rem(14px) rem(25px) rem(14px) rem(194px);
+      
+    }
+  }
+
+  &__inner {
+    @include flex-between-center;
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+
+    &--head {
+      height: rem(43px);
+
+      @media screen and (min-width: $screen-xl) {
+        padding: rem(14px) rem(25px) rem(14px) rem(194px);
+      }
+    }
+
+    &--body {
+      @include flex-between-center;
+      padding: 0 rem(9px) 0 rem(13px);
+      height: rem(60px);
+      position: relative;
+  
+      @media screen and (min-width: $screen-xl) {
+        height: rem(74px);
+        padding: 0 rem(25px) 0 rem(160px);
+        justify-content: flex-start;
+        gap: rem(25px);
+      }
     }
   }
 
@@ -51,6 +78,11 @@
     color: $color-white;
     padding-left: rem(28px);
     position: relative;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $color-green-dark;
+    }
 
     &::before {
       @include size(rem(14px), rem(14px));
@@ -91,16 +123,17 @@
   }
 
   &__body {
-    @include flex-between-center;
-    padding: 0 rem(9px) 0 rem(13px);
-    height: rem(60px);
+    // position: relative;
+    // @include flex-between-center;
+    // padding: 0 rem(9px) 0 rem(13px);
+    // height: rem(60px);
 
-    @media screen and (min-width: $screen-xl) {
-      height: rem(74px);
-      padding: 0 rem(25px) 0 rem(160px);
-      justify-content: flex-start;
-      gap: rem(25px);
-    }
+    // @media screen and (min-width: $screen-xl) {
+    //   height: rem(74px);
+    //   padding: 0 rem(25px) 0 rem(160px);
+    //   justify-content: flex-start;
+    //   gap: rem(25px);
+    // }
   }
 
   &__wrapper {
@@ -109,6 +142,7 @@
 
     @media screen and (min-width: $screen-xl) {
       gap: rem(20px);
+      align-items: center;
     }
 
     &--mob {
@@ -154,10 +188,10 @@
 
     @media screen and (min-width: $screen-xl) {
       @include size(rem(193px), rem(193px));
-      left: rem(-46px);
+      left: rem(-40px);
       bottom: 0;
       transform: none;
-      padding: rem(78px) 0 0 rem(30px);
+      padding-top: rem(50px);
     }
   }
 
@@ -238,6 +272,11 @@
 
       &:hover {
         color: $color-green-dark;
+      }
+
+      &--basket {
+        height: rem(74px);
+        border-bottom: 3px solid $color-green;
       }
     }
   

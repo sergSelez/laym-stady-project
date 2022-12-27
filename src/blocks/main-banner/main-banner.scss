@@ -6,6 +6,20 @@
     position: relative;
   }
 
+  &__mob-swiper {
+    @media screen and (min-width: $screen-xl) {
+      display: none;
+    }
+  }
+
+  &__swiper {
+    display: none;
+
+    @media screen and (min-width: $screen-xl) {
+      display: block;
+    }
+  }
+
   &__img {
     width: 100%;
     object-fit: contain;
