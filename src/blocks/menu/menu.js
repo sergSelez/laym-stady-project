@@ -46,6 +46,6 @@ ready(function() {
 
   burger.addEventListener('click', showCloseMenu)
   descMenu.addEventListener('click', showCloseMenu)
-  substrate.addEventListener('click', showCloseMenu)
+  substrate?.addEventListener('click', showCloseMenu)
   menu.addEventListener('click', (e) => showCloseSubmenu(e))
 })
