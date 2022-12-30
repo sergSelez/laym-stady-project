@@ -32,14 +32,14 @@ ready(function() {
   swiperInit('popularSwiper', '.popular__swipper', '.popular-next', '.popular-prev')
 
   const productWrapper = document.querySelectorAll('.products__wrapper')
-  const itemWrapper = document.querySelector('.basket__body')
-  const emptyBasket = document.querySelector('.basket__empty-wrapper')
+  const itemWrapper = document.querySelector('.aside-basket__body')
+  const emptyBasket = document.querySelector('.aside-basket__empty-wrapper')
 
   const itemsCheck = () => {
     if (document.querySelector('.item')) {
-      document.querySelector('.basket__empty-wrapper').classList.add('disable')
+      document.querySelector('.aside-basket__empty-wrapper').classList.add('disable')
     } else {
-      document.querySelector('.basket__empty-wrapper').classList.remove('disable')
+      document.querySelector('.aside-basket__empty-wrapper').classList.remove('disable')
     }
   }
 
@@ -59,13 +59,13 @@ ready(function() {
       return currentSum + currentNumber
     })
 
-    document.querySelector('.basket__sum').innerText = priceSum
+    document.querySelector('.aside-basket__sum').innerText = priceSum
     changeBasketAmount()
   }
 
   const changeBasketAmount = () => {
     const allItems = document.querySelectorAll('.item').length
-    const amountWrapper = document.querySelector('.basket__amount-value')
+    const amountWrapper = document.querySelector('.aside-basket__amount-value')
 
     amountWrapper.innerText = allItems
   }
@@ -87,7 +87,7 @@ ready(function() {
     const dataImg = parent.dataset.img
 
     itemWrapper.innerHTML += `
-      <div class="item" data-price=${dataPrice}>
+      <div class="item" data-price=${dataPrice} data-img=${dataImg}>
         <div class="item__left">
           <div class="item__img-wrapper">
             <img class="item__img" src="img/${dataImg}.png" alt="${dataName}">
@@ -134,13 +134,11 @@ ready(function() {
     getSumOfPrices()
   }
 
-  itemWrapper.addEventListener('click', (e) => {
+  itemWrapper?.addEventListener('click', (e) => {
     if (e.target.closest('.item__count-button')) changeAmount(e)
   })
 
-  itemWrapper.addEventListener('click', (e) => {
+  itemWrapper?.addEventListener('click', (e) => {
     if (e.target.closest('.item__close')) removeItem(e)
   })
-
-  getSumOfPrices()
 })

@@ -19,7 +19,7 @@ ready(function() {
     }
   }
 
-  showAllButton.addEventListener('click', showAllItems)
+  showAllButton?.addEventListener('click', showAllItems)
 
   const handleDescChange = (e) => {
     if (e.matches) {

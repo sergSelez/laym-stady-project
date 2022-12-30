@@ -1,258 +1,139 @@
 .basket {
-  display: none;
+  padding-top: rem(80px);
+  width: 100%;
 
-  @media screen and (min-width: $screen-xl) {
-    @include flex-column;
-    @include size(100%, calc(100vh - 116px));
-    @include shadow;
-    background-color: $color-gray;
-    position: sticky;
-    top: rem(116px);
+  @media screen and (min-width: $screen-xl)  {
+    padding-top: rem(148px);
+  }
+
+  &__title {
+    @include title;
+    margin-bottom: rem(16px);
   }
 
   &__wrapper {
-    @include flex-center;
-    flex-direction: column;
-    padding: rem(12px) rem(10px) rem(10px);
-    background-color: $color-white;
-    width: 100%;
     
-    &--top {
-      border-radius: 0 0 10px 10px;
-    }
-
-    &--bottom {
-      border-radius: 10px 10px 0 0;
-    }
-  }
-
-  &__empty-wrapper {
-    @include flex-column;
-    align-items: center;
-    padding-top: rem(45px);
-
-    &.disable {
-      display: none;
-    }
-  }
-
-  &__body {
-    @include flex-column;
-    gap: rem(4px);
-    padding: rem(8px) rem(6px);
-    height: 100%;
-    overflow-y: auto;
-  }
-
-  &__text {
-    @include text-large;
-
-    &--bold {
-      font-weight: 700;
-    }
-  }
-
-  &__thin-text {
-    @include text-main;
-    text-align: center;
-    opacity: 0.3;
-    margin-bottom: rem(36px);
-  }
-
-  &__empty-img {
-    margin-bottom: rem(19px);
-  }
-
-  &__empty-text {
-    @include text-large(700);
-    opacity: 0.3;
-    margin-bottom: rem(46px);
-  }
-
-  &__catalog-link {
-    @include flex-center;
-    @include text-large(700);
-    @include shadow;
-    @include size(100%, rem(45px));
-    background-color: $color-white;
-    border-radius: 10px;
-    margin-bottom: rem(10px);
-  }
-
-  &__last-link {
-    @include text-main;
-    text-decoration: underline;
-    opacity: 0.7;
-    margin-bottom: rem(7px);
-  }
-
-  &__price {
-    @include flex-between-center;
-    width: 100%;
-    margin-bottom: rem(10px);
-  }
-
-  &__confirm {
-    @include flex-between-center;
-    @include text-main(700);
-    width: 100%;
-    background-color: $color-green;
-    border-radius: 10px;
-    padding: 0 rem(8px);
-    height: rem(40px);
-  }
-
-  &__amount {
-    @include size(rem(24px), rem(24px));
-    position: relative;
-  }
-
-  &__amount-value {
-    @include size(rem(14px), rem(14px));
-    @include flex-center;
-    @include text-smaller(500);
-    background-color: $color-white;
-    border: 1px solid #A1D214;
-    border-radius: 100px;
-    position: absolute;
-    right: rem(-6px);
-    top: rem(-4px);
   }
 
   &__item {
-    @include flex-between-center;
-    height: rem(58px);
-    gap: rem(12px);
-    background-color: $color-white;
+    display: grid;
+    grid-template-columns: rem(80px) auto rem(65px) rem(14px) rem(14px);
+    row-gap: rem(9px);
     border-radius: 5px;
-    padding: rem(5px) rem(10px);
-    position: relative;
-  }
+    padding: rem(16px) 0;
 
-  &__item-left {
-    @include size(rem(47px), rem(50px));
-    @include flex-between-center;
-  }
+    @media screen and (min-width: $screen-xl) {
+      border-bottom: 1px solid $color-gray-white;
+      grid-template-columns: rem(80px) auto rem(42px) rem(65px) rem(110px) rem(46px);
+      row-gap: 0;
+      column-gap: rem(60px);
+      padding: rem(12px) rem(26px) rem(12px) rem(9px);
+      align-items: center;
+      transition: box-shadow 0.3s;
 
-  &__item-right {
+      &:hover {
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+      }
 
-  }
-
-  &__img-product {
-    height: 100%;
-  }
-
-  &__count {
-    @include flex-column;
-    @include text-main;
-  }
-
-  &__count-button {
-    @include flex-center;
-    @include size(rem(7px), rem(15px));
-    cursor: pointer;
-    opacity: 0.3;
-
-    &:hover {
-      opacity: 1;
+      &:last-of-type {
+        border-bottom: none;
+      }
     }
-  }
-
-  &__item-name {
-    @include text-smaller(500);
-    display: block;
-    opacity: 0.7;
-    margin-bottom: rem(9px);
-  }
-
-  &__item-values {
-    @include flex-between-center;
-  }
-
-  &__item-price {
-    @include text-small(700);
-  }
-
-  &__item-weight {
-    @include text-smaller;
-    opacity: 0.5;
-  }
-
-  &__close {
-    @include size(rem(8px), rem(8px));
-    position: absolute;
-    top: rem(4px);
-    right: rem(4px);
-    cursor: pointer;
-  }
-}
-
-.item {
-  @include flex-between-center;
-  height: rem(70px);
-  gap: rem(12px);
-  background-color: $color-white;
-  border-radius: 5px;
-  padding: rem(5px) rem(10px);
-  position: relative;
-
-  &__left {
-    @include flex-between-center;
-    flex: 0 0 rem(47px);
   }
 
   &__img-wrapper {
-    width: rem(30px);
+    grid-column: 1;
+    grid-row: 1 / 4;
     text-align: center;
+
+    @media screen and (min-width: $screen-xl) {
+      grid-row: 1;
+    }
   }
 
   &__img {
-    max-height: rem(60px);
+    max-height: rem(79px);
+  }
+
+  &__name {
+    @include text-large(500);
+    grid-column: 2 / 4;
+
+    @media screen and (min-width: $screen-xl) {
+      grid-column: 2;
+    }
+  }
+
+  &__control {
+    @include flex-column;
+    align-items: center;
+    gap: rem(12px);
+    grid-column: 5 /-1;
+
+    @media screen and (min-width: $screen-xl) {
+      grid-column: 6;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+    }
+  }
+
+  &__bju {
+    grid-column: 2 / 4;
+    display: flex;
+    gap: rem(10px);
+
+    @media screen and (min-width: $screen-xl) {
+      grid-column: 3;
+      grid-row: 1;
+      flex-direction: column;
+      gap: rem(3px);
+    }
+  }
+
+  &__energy {
+    @include text-small;
+
+    &--gray {
+      color: $color-gray-text;
+    }
+  }
+
+  &__price {
+    grid-column: 2;
+
+    @media screen and (min-width: $screen-xl) {
+      grid-column: 5;
+      grid-row: 1;
+    }
+  }
+
+  &__price-value {
+    @include font(16px, 22px, 700)
   }
 
   &__count {
-    @include flex-column;
+    grid-column: 3;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: rem(11px);
+
+    @media screen and (min-width: $screen-xl) {
+      grid-column: 4;
+      grid-row: 1;
+    }
+  }
+
+  &__count-value {
     @include text-main;
   }
 
   &__count-button {
     @include flex-center;
-    @include size(rem(7px), rem(15px));
-    cursor: pointer;
-    opacity: 0.3;
-
-    &:hover {
-      opacity: 1;
-    }
-  }
-
-  &__name {
-    @include text-small(500);
-    display: block;
-    opacity: 0.7;
-    margin-bottom: rem(9px);
-  }
-
-  &__values {
-    @include flex-between-center;
-    max-width: rem(90px);
-    width: 100%;
-  }
-
-  &__price {
-    @include text-main(700);
-  }
-
-  &__weight {
-    @include text-small;
-    opacity: 0.5;
-  }
-
-  &__close {
-    @include size(rem(8px), rem(8px));
-    position: absolute;
-    top: rem(4px);
-    right: rem(4px);
+    @include size(rem(18px), rem(18px));
+    @include text-main;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
     cursor: pointer;
   }
 }
